@@ -1,0 +1,17 @@
+{
+  "run_id": "20261014T125233Z-demo-20261024",
+  "label": "recorded agent run",
+  "recorded_at": "20261014T125233Z",
+  "git_sha": "bcdf6de",
+  "provider": "fake",
+  "model": "fake",
+  "seed": 20261024,
+  "scope": "full",
+  "scenario": "demo",
+  "faults": "demo",
+  "live_inference": false,
+  "start_ms": 0,
+  "end_ms": 5763649,
+  "note": "Rule-based fake model (not recorded model output)",
+  "correction_at": "81:40"
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Second Look viewer</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="bar">
+  <span id="viewTitle" class="view-title"></span>
+  <span class="scorebug"><b id="home" class="team">—</b><b id="score">– –</b><b id="away" class="team">—</b></span>
+  <span id="clock" class="clock">0:00</span>
+  <span id="speedLabel" class="speed-label"></span>
+  <span id="synthetic" class="synthetic"></span>
+</header>
+<div id="banner" class="banner" hidden></div>
+<main>
+  <div class="stage">
+    <canvas id="pitch"></canvas>
+    <div id="lower" class="lower" hidden></div>
+  </div>
+  <aside class="side">
+    <form id="askForm" class="ask">
+      <input id="askInput" maxlength="300" autocomplete="off">
+      <button id="askBtn" type="submit"></button>
+    </form>
+    <div id="answer" class="answer" hidden></div>
+    <h2 id="logTitle"></h2>
+    <ol id="log" class="log"></ol>
+    <section id="details" class="details" hidden></section>
+  </aside>
+</main>
+<footer id="status" class="status"></footer>
+<script type="module" src="js/viewer.js"></script>
+</body>
+</html>

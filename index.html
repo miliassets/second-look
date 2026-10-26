@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Second Look</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="shell">
+<header class="bar top">
+  <h1>Second Look</h1>
+  <span class="synthetic">Synthetic match · invented clubs and players</span>
+  <span id="state" class="state">connecting…</span>
+  <span id="replayBar" class="replay-bar" hidden>
+    <button data-speed="1">1×</button><button data-speed="4">4×</button><button data-speed="10">10×</button><button data-speed="60">60×</button>
+    <button id="restart">Restart</button><span id="recordedNote"></span>
+  </span>
+  <button id="start" hidden>Start feed</button>
+  <button id="correct" hidden title="Rule the 67' goal out after review">Inject correction</button>
+</header>
+<main class="split">
+  <iframe id="analyst" title="Analyst view"></iframe>
+  <iframe id="fan" title="Fan view"></iframe>
+</main>
+<script type="module" src="js/controls.js"></script>
+</body>
+</html>
