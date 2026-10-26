@@ -1,0 +1,6 @@
+{"profile_id":"analyst-en","question":"Why did Ironvale score?","text":"Score 1–1. Ironvale held 50.4% of the ball over the last two minutes.","supported":true,"overlay_id":"ov-ask-1-analyst-en"}
+{"profile_id":"analyst-en","question":"What is the score?","text":"Score 1–1. Ironvale held 50.4% of the ball over the last two minutes.","supported":true,"overlay_id":"ov-ask-2-analyst-en"}
+{"profile_id":"analyst-en","question":"Who has the ball more?","text":"Score 1–1. Ironvale held 50.4% of the ball over the last two minutes.","supported":true,"overlay_id":"ov-ask-3-analyst-en"}
+{"profile_id":"fan-es","question":"¿Por qué marcó Ironvale?","text":"Marcador 1–1. Ironvale tuvo 50,4% del balón en los últimos minutos.","supported":true,"overlay_id":"ov-ask-4-fan-es"}
+{"profile_id":"fan-es","question":"¿Cuál es el marcador?","text":"Marcador 1–1. Ironvale tuvo 50,4% del balón en los últimos minutos.","supported":true,"overlay_id":"ov-ask-5-fan-es"}
+{"profile_id":"fan-es","question":"¿Quién tiene más el balón?","text":"No puedo respaldar una respuesta con los datos del partido. Marcador 1–1. Ironvale: 50,4% de posesión; Kestrel Bay: 49,6%.","supported":false,"overlay_id":"ov-ask-6-fan-es"}

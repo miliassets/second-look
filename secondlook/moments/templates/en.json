@@ -1,0 +1,35 @@
+{
+  "headline": {
+    "goal": "Goal",
+    "disallowed_goal": "Updated",
+    "fast_shot": "Shot",
+    "card": "Card",
+    "tactical_shift": "Tactical shift",
+    "phase_change": "Rhythm",
+    "half_time": "Half time",
+    "full_time": "Full time",
+    "correction": "Updated"
+  },
+  "analyst": {
+    "goal": "Goal for {t}: {p}, {time}. Score {score}.",
+    "disallowed_goal": "Updated: {t} goal ruled out after review. Score {score}.",
+    "fast_shot": "Shot by {p} for {t}, {speed} km/h.",
+    "card": "Card: {p} ({t}) shown a {card} card, {time}.",
+    "tactical_shift": "Tactical shift for {t}, {time}.",
+    "phase_change": "Rhythm: {t} in {phase}.",
+    "half_time": "Half time. Score {score}.",
+    "full_time": "Full time. Score {score}.",
+    "correction": "Updated: a {t} play was corrected after review."
+  },
+  "fan": {
+    "goal": "Goal for {t}! {p} scores. {score}.",
+    "disallowed_goal": "Updated: {t} goal ruled out. {score}.",
+    "fast_shot": "Shot by {p}, {speed} km/h.",
+    "card": "{p} is shown a {card} card.",
+    "tactical_shift": "Tactical change for {t}.",
+    "phase_change": "Rhythm: {t} in {phase}.",
+    "half_time": "Half time. {score}.",
+    "full_time": "Full time. {score}.",
+    "correction": "Updated: a {t} play was corrected."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "properties": {
+    "claim_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Claim Ids",
+      "type": "array"
+    },
+    "headline": {
+      "default": "",
+      "title": "Headline",
+      "type": "string"
+    },
+    "lang": {
+      "enum": [
+        "en",
+        "es"
+      ],
+      "title": "Lang",
+      "type": "string"
+    },
+    "layers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Layers",
+      "type": "array"
+    },
+    "output_id": {
+      "default": "",
+      "title": "Output Id",
+      "type": "string"
+    },
+    "profile_id": {
+      "title": "Profile Id",
+      "type": "string"
+    },
+    "status": {
+      "default": "proposed",
+      "enum": [
+        "proposed",
+        "approved",
+        "invalidated"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "story_id": {
+      "title": "Story Id",
+      "type": "string"
+    },
+    "story_revision": {
+      "title": "Story Revision",
+      "type": "integer"
+    },
+    "template": {
+      "title": "Template",
+      "type": "string"
+    }
+  },
+  "required": [
+    "story_id",
+    "story_revision",
+    "profile_id",
+    "lang",
+    "template"
+  ],
+  "title": "ViewerOutput",
+  "type": "object"
+}

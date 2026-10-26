@@ -1,0 +1,545 @@
+{
+  "match_id": "m001",
+  "seed": 20261024,
+  "home": {
+    "team_id": "KBY",
+    "name": "Kestrel Bay FC",
+    "short": "KBY",
+    "kit_color": "#1b9aa6",
+    "style": {
+      "press": 0.16,
+      "pass_skill": 0.01,
+      "forward": 0.45
+    }
+  },
+  "away": {
+    "team_id": "IRV",
+    "name": "Ironvale Athletic",
+    "short": "IRV",
+    "kit_color": "#7a1f3d",
+    "style": {
+      "press": 0.12,
+      "pass_skill": 0.0,
+      "forward": 0.5
+    }
+  },
+  "players": [
+    {
+      "player_id": "KBY-01",
+      "team_id": "KBY",
+      "name": "Sami Varto",
+      "number": 1,
+      "role": "GK",
+      "ratings": {
+        "passing": 0.607,
+        "pace": 0.578,
+        "finishing": 0.352,
+        "pressing": 0.514,
+        "stamina": 0.716
+      }
+    },
+    {
+      "player_id": "KBY-02",
+      "team_id": "KBY",
+      "name": "Dov Esker",
+      "number": 2,
+      "role": "RB",
+      "ratings": {
+        "passing": 0.637,
+        "pace": 0.599,
+        "finishing": 0.456,
+        "pressing": 0.494,
+        "stamina": 0.643
+      }
+    },
+    {
+      "player_id": "KBY-03",
+      "team_id": "KBY",
+      "name": "Hale Marrin",
+      "number": 3,
+      "role": "LB",
+      "ratings": {
+        "passing": 0.632,
+        "pace": 0.568,
+        "finishing": 0.352,
+        "pressing": 0.477,
+        "stamina": 0.752
+      }
+    },
+    {
+      "player_id": "KBY-04",
+      "team_id": "KBY",
+      "name": "Ivo Kassen",
+      "number": 4,
+      "role": "CB1",
+      "ratings": {
+        "passing": 0.551,
+        "pace": 0.58,
+        "finishing": 0.411,
+        "pressing": 0.527,
+        "stamina": 0.741
+      }
+    },
+    {
+      "player_id": "KBY-05",
+      "team_id": "KBY",
+      "name": "Tomas Ledran",
+      "number": 5,
+      "role": "CB2",
+      "ratings": {
+        "passing": 0.565,
+        "pace": 0.603,
+        "finishing": 0.409,
+        "pressing": 0.448,
+        "stamina": 0.693
+      }
+    },
+    {
+      "player_id": "KBY-06",
+      "team_id": "KBY",
+      "name": "Callum Rook",
+      "number": 6,
+      "role": "DM",
+      "ratings": {
+        "passing": 0.773,
+        "pace": 0.554,
+        "finishing": 0.35,
+        "pressing": 0.513,
+        "stamina": 0.7
+      }
+    },
+    {
+      "player_id": "KBY-08",
+      "team_id": "KBY",
+      "name": "Niko Halvard",
+      "number": 8,
+      "role": "CM",
+      "ratings": {
+        "passing": 0.739,
+        "pace": 0.643,
+        "finishing": 0.364,
+        "pressing": 0.55,
+        "stamina": 0.709
+      }
+    },
+    {
+      "player_id": "KBY-10",
+      "team_id": "KBY",
+      "name": "Oskar Brenn",
+      "number": 10,
+      "role": "AM",
+      "ratings": {
+        "passing": 0.747,
+        "pace": 0.598,
+        "finishing": 0.347,
+        "pressing": 0.499,
+        "stamina": 0.735
+      }
+    },
+    {
+      "player_id": "KBY-07",
+      "team_id": "KBY",
+      "name": "Arlo Quist",
+      "number": 7,
+      "role": "RW",
+      "ratings": {
+        "passing": 0.564,
+        "pace": 0.795,
+        "finishing": 0.443,
+        "pressing": 0.442,
+        "stamina": 0.749
+      }
+    },
+    {
+      "player_id": "KBY-11",
+      "team_id": "KBY",
+      "name": "Felix Marn",
+      "number": 11,
+      "role": "LW",
+      "ratings": {
+        "passing": 0.625,
+        "pace": 0.8,
+        "finishing": 0.356,
+        "pressing": 0.468,
+        "stamina": 0.69
+      }
+    },
+    {
+      "player_id": "KBY-09",
+      "team_id": "KBY",
+      "name": "Emre Tazlan",
+      "number": 9,
+      "role": "ST",
+      "ratings": {
+        "passing": 0.642,
+        "pace": 0.548,
+        "finishing": 0.788,
+        "pressing": 0.467,
+        "stamina": 0.69
+      }
+    },
+    {
+      "player_id": "KBY-12",
+      "team_id": "KBY",
+      "name": "Ward Tilley",
+      "number": 12,
+      "role": "GK",
+      "ratings": {
+        "passing": 0.647,
+        "pace": 0.617,
+        "finishing": 0.385,
+        "pressing": 0.533,
+        "stamina": 0.656
+      }
+    },
+    {
+      "player_id": "KBY-13",
+      "team_id": "KBY",
+      "name": "Jory Penhale",
+      "number": 13,
+      "role": "CB1",
+      "ratings": {
+        "passing": 0.622,
+        "pace": 0.591,
+        "finishing": 0.445,
+        "pressing": 0.499,
+        "stamina": 0.751
+      }
+    },
+    {
+      "player_id": "KBY-14",
+      "team_id": "KBY",
+      "name": "Orrin Bask",
+      "number": 14,
+      "role": "RW",
+      "ratings": {
+        "passing": 0.591,
+        "pace": 0.72,
+        "finishing": 0.449,
+        "pressing": 0.551,
+        "stamina": 0.751
+      }
+    },
+    {
+      "player_id": "KBY-15",
+      "team_id": "KBY",
+      "name": "Lio Strand",
+      "number": 15,
+      "role": "CM",
+      "ratings": {
+        "passing": 0.804,
+        "pace": 0.654,
+        "finishing": 0.374,
+        "pressing": 0.441,
+        "stamina": 0.677
+      }
+    },
+    {
+      "player_id": "KBY-16",
+      "team_id": "KBY",
+      "name": "Gus Harlow",
+      "number": 16,
+      "role": "LW",
+      "ratings": {
+        "passing": 0.627,
+        "pace": 0.767,
+        "finishing": 0.455,
+        "pressing": 0.533,
+        "stamina": 0.682
+      }
+    },
+    {
+      "player_id": "KBY-17",
+      "team_id": "KBY",
+      "name": "Pim Corvane",
+      "number": 17,
+      "role": "DM",
+      "ratings": {
+        "passing": 0.805,
+        "pace": 0.648,
+        "finishing": 0.398,
+        "pressing": 0.546,
+        "stamina": 0.741
+      }
+    },
+    {
+      "player_id": "KBY-18",
+      "team_id": "KBY",
+      "name": "Ansel Cray",
+      "number": 18,
+      "role": "ST",
+      "ratings": {
+        "passing": 0.606,
+        "pace": 0.584,
+        "finishing": 0.804,
+        "pressing": 0.552,
+        "stamina": 0.684
+      }
+    },
+    {
+      "player_id": "IRV-01",
+      "team_id": "IRV",
+      "name": "Jonah Pell",
+      "number": 1,
+      "role": "GK",
+      "ratings": {
+        "passing": 0.562,
+        "pace": 0.657,
+        "finishing": 0.45,
+        "pressing": 0.488,
+        "stamina": 0.739
+      }
+    },
+    {
+      "player_id": "IRV-02",
+      "team_id": "IRV",
+      "name": "Cato Brevik",
+      "number": 2,
+      "role": "RB",
+      "ratings": {
+        "passing": 0.571,
+        "pace": 0.591,
+        "finishing": 0.375,
+        "pressing": 0.483,
+        "stamina": 0.641
+      }
+    },
+    {
+      "player_id": "IRV-03",
+      "team_id": "IRV",
+      "name": "Mattis Orlo",
+      "number": 3,
+      "role": "LB",
+      "ratings": {
+        "passing": 0.554,
+        "pace": 0.599,
+        "finishing": 0.358,
+        "pressing": 0.53,
+        "stamina": 0.696
+      }
+    },
+    {
+      "player_id": "IRV-04",
+      "team_id": "IRV",
+      "name": "Idris Sable",
+      "number": 4,
+      "role": "CB1",
+      "ratings": {
+        "passing": 0.638,
+        "pace": 0.626,
+        "finishing": 0.342,
+        "pressing": 0.533,
+        "stamina": 0.741
+      }
+    },
+    {
+      "player_id": "IRV-05",
+      "team_id": "IRV",
+      "name": "Ruben Kaltz",
+      "number": 5,
+      "role": "CB2",
+      "ratings": {
+        "passing": 0.614,
+        "pace": 0.582,
+        "finishing": 0.44,
+        "pressing": 0.458,
+        "stamina": 0.656
+      }
+    },
+    {
+      "player_id": "IRV-06",
+      "team_id": "IRV",
+      "name": "Soren Dacre",
+      "number": 6,
+      "role": "DM",
+      "ratings": {
+        "passing": 0.756,
+        "pace": 0.551,
+        "finishing": 0.433,
+        "pressing": 0.533,
+        "stamina": 0.73
+      }
+    },
+    {
+      "player_id": "IRV-08",
+      "team_id": "IRV",
+      "name": "Iko Mbanefo",
+      "number": 8,
+      "role": "CM",
+      "ratings": {
+        "passing": 0.714,
+        "pace": 0.641,
+        "finishing": 0.342,
+        "pressing": 0.466,
+        "stamina": 0.738
+      }
+    },
+    {
+      "player_id": "IRV-10",
+      "team_id": "IRV",
+      "name": "Teodor Vask",
+      "number": 10,
+      "role": "AM",
+      "ratings": {
+        "passing": 0.783,
+        "pace": 0.606,
+        "finishing": 0.453,
+        "pressing": 0.551,
+        "stamina": 0.754
+      }
+    },
+    {
+      "player_id": "IRV-07",
+      "team_id": "IRV",
+      "name": "Lenz Arkwright",
+      "number": 7,
+      "role": "RW",
+      "ratings": {
+        "passing": 0.623,
+        "pace": 0.727,
+        "finishing": 0.368,
+        "pressing": 0.553,
+        "stamina": 0.703
+      }
+    },
+    {
+      "player_id": "IRV-11",
+      "team_id": "IRV",
+      "name": "Piet Hollis",
+      "number": 11,
+      "role": "LW",
+      "ratings": {
+        "passing": 0.582,
+        "pace": 0.787,
+        "finishing": 0.445,
+        "pressing": 0.489,
+        "stamina": 0.722
+      }
+    },
+    {
+      "player_id": "IRV-09",
+      "team_id": "IRV",
+      "name": "Dario Fenn",
+      "number": 9,
+      "role": "ST",
+      "ratings": {
+        "passing": 0.622,
+        "pace": 0.576,
+        "finishing": 0.734,
+        "pressing": 0.458,
+        "stamina": 0.743
+      }
+    },
+    {
+      "player_id": "IRV-12",
+      "team_id": "IRV",
+      "name": "Aksel Tarn",
+      "number": 12,
+      "role": "GK",
+      "ratings": {
+        "passing": 0.589,
+        "pace": 0.604,
+        "finishing": 0.359,
+        "pressing": 0.451,
+        "stamina": 0.695
+      }
+    },
+    {
+      "player_id": "IRV-13",
+      "team_id": "IRV",
+      "name": "Dev Rooke",
+      "number": 13,
+      "role": "CB1",
+      "ratings": {
+        "passing": 0.626,
+        "pace": 0.623,
+        "finishing": 0.421,
+        "pressing": 0.54,
+        "stamina": 0.728
+      }
+    },
+    {
+      "player_id": "IRV-14",
+      "team_id": "IRV",
+      "name": "Mika Sorrel",
+      "number": 14,
+      "role": "CM",
+      "ratings": {
+        "passing": 0.778,
+        "pace": 0.607,
+        "finishing": 0.441,
+        "pressing": 0.463,
+        "stamina": 0.723
+      }
+    },
+    {
+      "player_id": "IRV-15",
+      "team_id": "IRV",
+      "name": "Tobias Verne",
+      "number": 15,
+      "role": "DM",
+      "ratings": {
+        "passing": 0.792,
+        "pace": 0.557,
+        "finishing": 0.368,
+        "pressing": 0.513,
+        "stamina": 0.699
+      }
+    },
+    {
+      "player_id": "IRV-16",
+      "team_id": "IRV",
+      "name": "Elio Garrick",
+      "number": 16,
+      "role": "LW",
+      "ratings": {
+        "passing": 0.609,
+        "pace": 0.814,
+        "finishing": 0.382,
+        "pressing": 0.528,
+        "stamina": 0.665
+      }
+    },
+    {
+      "player_id": "IRV-17",
+      "team_id": "IRV",
+      "name": "Yusuf Kaddar",
+      "number": 17,
+      "role": "RW",
+      "ratings": {
+        "passing": 0.572,
+        "pace": 0.775,
+        "finishing": 0.343,
+        "pressing": 0.539,
+        "stamina": 0.713
+      }
+    },
+    {
+      "player_id": "IRV-18",
+      "team_id": "IRV",
+      "name": "Noam Fische",
+      "number": 18,
+      "role": "ST",
+      "ratings": {
+        "passing": 0.649,
+        "pace": 0.609,
+        "finishing": 0.694,
+        "pressing": 0.548,
+        "stamina": 0.706
+      }
+    }
+  ],
+  "venue": "Saltmarsh Ground",
+  "referee": "A. Durrant",
+  "periods": [
+    {
+      "period": 1,
+      "length_ms": 2823545
+    },
+    {
+      "period": 2,
+      "length_ms": 2940103
+    }
+  ],
+  "label": "Synthetic match"
+}

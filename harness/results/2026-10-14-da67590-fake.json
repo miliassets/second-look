@@ -1,0 +1,1876 @@
+{
+  "meta": {
+    "date": "2026-10-14",
+    "git_sha": "da67590",
+    "provider": "fake",
+    "model": "fake",
+    "n_sequences": 30,
+    "partial": false
+  },
+  "summary": {
+    "multi": {
+      "unsupported_claims_per_100": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "published_accuracy_pct": {
+        "value": 50.0,
+        "ci95": [
+          30.0,
+          66.66666666666667
+        ]
+      },
+      "fallback_rate_pct": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "corrections_both_5s_pct": {
+        "value": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ]
+      },
+      "p95_latency_ms": {
+        "value": 269,
+        "ci95": [
+          20,
+          269
+        ]
+      },
+      "survival_under_fault_pct": {
+        "value": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ]
+      },
+      "tokens_per_completed_moment": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "n": {
+        "value": 30.0,
+        "ci95": null
+      },
+      "published": {
+        "value": 30.0,
+        "ci95": null
+      }
+    },
+    "single": {
+      "unsupported_claims_per_100": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "published_accuracy_pct": {
+        "value": 53.333333333333336,
+        "ci95": [
+          33.333333333333336,
+          70.0
+        ]
+      },
+      "fallback_rate_pct": {
+        "value": 16.666666666666668,
+        "ci95": [
+          3.3333333333333335,
+          33.333333333333336
+        ]
+      },
+      "corrections_both_5s_pct": {
+        "value": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ]
+      },
+      "p95_latency_ms": {
+        "value": 52,
+        "ci95": [
+          48,
+          60
+        ]
+      },
+      "survival_under_fault_pct": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "tokens_per_completed_moment": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "n": {
+        "value": 30.0,
+        "ci95": null
+      },
+      "published": {
+        "value": 25.0,
+        "ci95": null
+      }
+    },
+    "no_editor": {
+      "unsupported_claims_per_100": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "published_accuracy_pct": {
+        "value": 40.0,
+        "ci95": [
+          23.333333333333332,
+          56.666666666666664
+        ]
+      },
+      "fallback_rate_pct": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "corrections_both_5s_pct": {
+        "value": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ]
+      },
+      "p95_latency_ms": {
+        "value": 381,
+        "ci95": [
+          168,
+          386
+        ]
+      },
+      "survival_under_fault_pct": {
+        "value": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ]
+      },
+      "tokens_per_completed_moment": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "n": {
+        "value": 30.0,
+        "ci95": null
+      },
+      "published": {
+        "value": 30.0,
+        "ci95": null
+      }
+    }
+  },
+  "rows": [
+    {
+      "system": "multi",
+      "seq_id": "s01-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 4,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 18,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s01-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 38,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s01-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 149,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s02-clean",
+      "group": "clean",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 5,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 16,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s02-clean",
+      "group": "clean",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 33,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s02-clean",
+      "group": "clean",
+      "true_tag": "sustained_possession",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 7,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 157,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s03-clean",
+      "group": "clean",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 14,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s03-clean",
+      "group": "clean",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 30,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s03-clean",
+      "group": "clean",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 161,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s04-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "even_rhythm",
+      "proposed_claims": 5,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 15,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s04-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 36,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s04-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 7,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 110,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s05-clean",
+      "group": "clean",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 5,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 14,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s05-clean",
+      "group": "clean",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 32,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s05-clean",
+      "group": "clean",
+      "true_tag": "sustained_possession",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 7,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 106,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s06-clean",
+      "group": "clean",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 4,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 14,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s06-clean",
+      "group": "clean",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 48,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s06-clean",
+      "group": "clean",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 141,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s07-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "even_rhythm",
+      "proposed_claims": 5,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 15,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s07-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 27,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s07-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 7,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 95,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s08-clean",
+      "group": "clean",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 5,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 18,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s08-clean",
+      "group": "clean",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 60,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s08-clean",
+      "group": "clean",
+      "true_tag": "sustained_possession",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 7,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 114,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s09-clean",
+      "group": "clean",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 13,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s09-clean",
+      "group": "clean",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 45,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s09-clean",
+      "group": "clean",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 140,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s10-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "even_rhythm",
+      "proposed_claims": 5,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 13,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s10-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 48,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s10-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 7,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 147,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s11-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 20,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s11-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 30,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s11-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 153,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s12-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 4,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 16,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s12-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 48,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s12-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 168,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s13-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 18,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s13-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 40,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s13-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 156,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s14-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 4,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 19,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s14-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 52,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s14-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 132,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s15-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 11,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s15-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 25,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s15-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 155,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s16-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 4,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 17,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s16-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 49,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s16-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 124,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s17-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 18,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s17-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 29,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s17-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 161,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s18-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 4,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 17,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s18-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 30,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s18-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 147,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s19-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 12,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s19-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 25,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s19-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 136,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s20-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 4,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 17,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s20-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 1,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 28,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s20-misleading",
+      "group": "misleading",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 115,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s21-correction",
+      "group": "correction",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 14,
+      "tokens": 0,
+      "calls": 10,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s21-correction",
+      "group": "correction",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 3,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 27,
+      "tokens": 0,
+      "calls": 2,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s21-correction",
+      "group": "correction",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 8,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 105,
+      "tokens": 0,
+      "calls": 9,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s22-correction",
+      "group": "correction",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 17,
+      "tokens": 0,
+      "calls": 10,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s22-correction",
+      "group": "correction",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 3,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 38,
+      "tokens": 0,
+      "calls": 2,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s22-correction",
+      "group": "correction",
+      "true_tag": "sustained_possession",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 8,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 106,
+      "tokens": 0,
+      "calls": 9,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s23-correction",
+      "group": "correction",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 8,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 12,
+      "tokens": 0,
+      "calls": 10,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s23-correction",
+      "group": "correction",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 3,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 26,
+      "tokens": 0,
+      "calls": 2,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s23-correction",
+      "group": "correction",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 8,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 101,
+      "tokens": 0,
+      "calls": 9,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s24-correction",
+      "group": "correction",
+      "true_tag": "pressing_recovery",
+      "published_tag": "even_rhythm",
+      "proposed_claims": 7,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 15,
+      "tokens": 0,
+      "calls": 10,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s24-correction",
+      "group": "correction",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 3,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 31,
+      "tokens": 0,
+      "calls": 2,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s24-correction",
+      "group": "correction",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 9,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 107,
+      "tokens": 0,
+      "calls": 9,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s25-correction",
+      "group": "correction",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 11,
+      "tokens": 0,
+      "calls": 10,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s25-correction",
+      "group": "correction",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 3,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 47,
+      "tokens": 0,
+      "calls": 2,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s25-correction",
+      "group": "correction",
+      "true_tag": "sustained_possession",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 8,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 84,
+      "tokens": 0,
+      "calls": 9,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s26-timeout",
+      "group": "timeout",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 5,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 269,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": true,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "single",
+      "seq_id": "s26-timeout",
+      "group": "timeout",
+      "true_tag": "sustained_possession",
+      "published_tag": null,
+      "proposed_claims": 0,
+      "failed_claims": 0,
+      "explained_profiles": [],
+      "latency_ms": null,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": false,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s26-timeout",
+      "group": "timeout",
+      "true_tag": "sustained_possession",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 7,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 367,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": true,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "multi",
+      "seq_id": "s27-timeout",
+      "group": "timeout",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 266,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": true,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "single",
+      "seq_id": "s27-timeout",
+      "group": "timeout",
+      "true_tag": "direct_play_chaos",
+      "published_tag": null,
+      "proposed_claims": 0,
+      "failed_claims": 0,
+      "explained_profiles": [],
+      "latency_ms": null,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": false,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s27-timeout",
+      "group": "timeout",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 347,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": true,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "multi",
+      "seq_id": "s28-timeout",
+      "group": "timeout",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 4,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 262,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": true,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "single",
+      "seq_id": "s28-timeout",
+      "group": "timeout",
+      "true_tag": "pressing_recovery",
+      "published_tag": null,
+      "proposed_claims": 0,
+      "failed_claims": 0,
+      "explained_profiles": [],
+      "latency_ms": null,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": false,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s28-timeout",
+      "group": "timeout",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 6,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 338,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": true,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "multi",
+      "seq_id": "s29-timeout",
+      "group": "timeout",
+      "true_tag": "sustained_possession",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 5,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 269,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": true,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "single",
+      "seq_id": "s29-timeout",
+      "group": "timeout",
+      "true_tag": "sustained_possession",
+      "published_tag": null,
+      "proposed_claims": 0,
+      "failed_claims": 0,
+      "explained_profiles": [],
+      "latency_ms": null,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": false,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s29-timeout",
+      "group": "timeout",
+      "true_tag": "sustained_possession",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 7,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 386,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": true,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "multi",
+      "seq_id": "s30-timeout",
+      "group": "timeout",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "even_rhythm",
+      "proposed_claims": 5,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 268,
+      "tokens": 0,
+      "calls": 7,
+      "correction_both_5s": null,
+      "survived_fault": true,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "single",
+      "seq_id": "s30-timeout",
+      "group": "timeout",
+      "true_tag": "direct_play_chaos",
+      "published_tag": null,
+      "proposed_claims": 0,
+      "failed_claims": 0,
+      "explained_profiles": [],
+      "latency_ms": null,
+      "tokens": 0,
+      "calls": 1,
+      "correction_both_5s": null,
+      "survived_fault": false,
+      "fault_profile": "fan-es"
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s30-timeout",
+      "group": "timeout",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 7,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 381,
+      "tokens": 0,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": true,
+      "fault_profile": "fan-es"
+    }
+  ]
+}

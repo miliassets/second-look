@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "claim_id": {
+      "title": "Claim Id",
+      "type": "string"
+    },
+    "params": {
+      "additionalProperties": true,
+      "title": "Params",
+      "type": "object"
+    },
+    "type": {
+      "enum": [
+        "event_fact",
+        "count",
+        "rate",
+        "chain",
+        "gap_seconds",
+        "physical",
+        "compare",
+        "phase",
+        "score",
+        "involved"
+      ],
+      "title": "Type",
+      "type": "string"
+    },
+    "value": {
+      "default": null,
+      "title": "Value"
+    }
+  },
+  "required": [
+    "claim_id",
+    "type"
+  ],
+  "title": "Claim",
+  "type": "object"
+}

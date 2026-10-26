@@ -1,0 +1,13 @@
+{
+  "moments": 16,
+  "fallbacks": 0,
+  "explanations": 28,
+  "corrections_reflected": 2,
+  "latency_ms_p50": 20,
+  "latency_ms_p95": 109,
+  "latency_ms_mean": 40.964285714285715,
+  "agent_calls": 93,
+  "tokens_in": 0,
+  "tokens_out": 0,
+  "wall_seconds": 49.1
+}

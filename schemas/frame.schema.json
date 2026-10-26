@@ -1,0 +1,73 @@
+{
+  "$defs": {
+    "PlayerPos": {
+      "properties": {
+        "player_id": {
+          "title": "Player Id",
+          "type": "string"
+        },
+        "x": {
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "player_id",
+        "x",
+        "y"
+      ],
+      "title": "PlayerPos",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Tracking frame, 2 Hz. 22 players and the ball.",
+  "properties": {
+    "ball": {
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "title": "Ball",
+      "type": "array"
+    },
+    "match_clock_ms": {
+      "title": "Match Clock Ms",
+      "type": "integer"
+    },
+    "match_id": {
+      "title": "Match Id",
+      "type": "string"
+    },
+    "period": {
+      "title": "Period",
+      "type": "integer"
+    },
+    "players": {
+      "items": {
+        "$ref": "#/$defs/PlayerPos"
+      },
+      "title": "Players",
+      "type": "array"
+    }
+  },
+  "required": [
+    "match_id",
+    "period",
+    "match_clock_ms",
+    "players",
+    "ball"
+  ],
+  "title": "Frame",
+  "type": "object"
+}

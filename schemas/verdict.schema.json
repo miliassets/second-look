@@ -1,0 +1,102 @@
+{
+  "$defs": {
+    "EvidenceRequest": {
+      "properties": {
+        "question": {
+          "title": "Question",
+          "type": "string"
+        },
+        "to_scout": {
+          "enum": [
+            "pressure",
+            "rhythm",
+            "player",
+            "system"
+          ],
+          "title": "To Scout",
+          "type": "string"
+        }
+      },
+      "required": [
+        "to_scout",
+        "question"
+      ],
+      "title": "EvidenceRequest",
+      "type": "object"
+    },
+    "Rejection": {
+      "properties": {
+        "candidate_id": {
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "reason"
+      ],
+      "title": "Rejection",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "as_of_rev": {
+      "default": 0,
+      "title": "As Of Rev",
+      "type": "integer"
+    },
+    "chosen_candidate_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Chosen Candidate Id"
+    },
+    "evidence_request": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/EvidenceRequest"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "moment_id": {
+      "default": "",
+      "title": "Moment Id",
+      "type": "string"
+    },
+    "notes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Notes",
+      "type": "array"
+    },
+    "rejected": {
+      "items": {
+        "$ref": "#/$defs/Rejection"
+      },
+      "title": "Rejected",
+      "type": "array"
+    },
+    "verdict_id": {
+      "default": "",
+      "title": "Verdict Id",
+      "type": "string"
+    }
+  },
+  "title": "Verdict",
+  "type": "object"
+}

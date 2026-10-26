@@ -1,0 +1,35 @@
+{
+  "headline": {
+    "goal": "¡Gol!",
+    "disallowed_goal": "Actualizado",
+    "fast_shot": "Disparo",
+    "card": "Tarjeta",
+    "tactical_shift": "Cambio táctico",
+    "phase_change": "Ritmo",
+    "half_time": "Descanso",
+    "full_time": "Final",
+    "correction": "Actualizado"
+  },
+  "analyst": {
+    "goal": "Gol de {t}: {p}, {time}. Marcador {score}.",
+    "disallowed_goal": "Actualizado: gol de {t} anulado tras revisión. Marcador {score}.",
+    "fast_shot": "Disparo de {p} para {t}, {speed} km/h.",
+    "card": "Tarjeta: {p} ({t}) ve la {card}, {time}.",
+    "tactical_shift": "Cambio táctico de {t}, {time}.",
+    "phase_change": "Ritmo: {t} en {phase}.",
+    "half_time": "Descanso. Marcador {score}.",
+    "full_time": "Final. Marcador {score}.",
+    "correction": "Actualizado: una jugada de {t} fue corregida tras revisión."
+  },
+  "fan": {
+    "goal": "¡Gol de {t}! Marcó {p}. {score}.",
+    "disallowed_goal": "Actualizado: gol de {t} anulado. {score}.",
+    "fast_shot": "Disparo de {p}, {speed} km/h.",
+    "card": "{p} ve la {card}.",
+    "tactical_shift": "Cambio táctico de {t}.",
+    "phase_change": "Ritmo: {t} en {phase}.",
+    "half_time": "Descanso. {score}.",
+    "full_time": "Final. {score}.",
+    "correction": "Actualizado: una jugada de {t} fue corregida."
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "properties": {
+    "claim_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Claim Ids",
+      "type": "array"
+    },
+    "moment_id": {
+      "title": "Moment Id",
+      "type": "string"
+    },
+    "revision": {
+      "default": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "status": {
+      "default": "approved",
+      "enum": [
+        "approved",
+        "superseded",
+        "invalidated"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "story_id": {
+      "title": "Story Id",
+      "type": "string"
+    },
+    "supersedes_revision": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Supersedes Revision"
+    },
+    "text_en": {
+      "title": "Text En",
+      "type": "string"
+    },
+    "thesis_tag": {
+      "anyOf": [
+        {
+          "enum": [
+            "pressing_recovery",
+            "sustained_possession",
+            "direct_play_chaos",
+            "tactical_shift",
+            "fatigue",
+            "individual_action",
+            "set_piece",
+            "even_rhythm",
+            "correction"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Thesis Tag"
+    },
+    "verdict_id": {
+      "default": "",
+      "title": "Verdict Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "story_id",
+    "moment_id",
+    "text_en"
+  ],
+  "title": "Story",
+  "type": "object"
+}

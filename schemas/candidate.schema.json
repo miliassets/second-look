@@ -1,0 +1,114 @@
+{
+  "$defs": {
+    "Claim": {
+      "properties": {
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "params": {
+          "additionalProperties": true,
+          "title": "Params",
+          "type": "object"
+        },
+        "type": {
+          "enum": [
+            "event_fact",
+            "count",
+            "rate",
+            "chain",
+            "gap_seconds",
+            "physical",
+            "compare",
+            "phase",
+            "score",
+            "involved"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "required": [
+        "claim_id",
+        "type"
+      ],
+      "title": "Claim",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "as_of_rev": {
+      "default": 0,
+      "title": "As Of Rev",
+      "type": "integer"
+    },
+    "candidate_id": {
+      "default": "",
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "claims": {
+      "items": {
+        "$ref": "#/$defs/Claim"
+      },
+      "title": "Claims",
+      "type": "array"
+    },
+    "moment_id": {
+      "default": "",
+      "title": "Moment Id",
+      "type": "string"
+    },
+    "scout": {
+      "enum": [
+        "pressure",
+        "rhythm",
+        "player",
+        "system"
+      ],
+      "title": "Scout",
+      "type": "string"
+    },
+    "status": {
+      "default": "proposed",
+      "enum": [
+        "proposed",
+        "rejected",
+        "chosen",
+        "invalidated"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "thesis": {
+      "title": "Thesis",
+      "type": "string"
+    },
+    "thesis_tag": {
+      "enum": [
+        "pressing_recovery",
+        "sustained_possession",
+        "direct_play_chaos",
+        "tactical_shift",
+        "fatigue",
+        "individual_action",
+        "set_piece",
+        "even_rhythm",
+        "correction"
+      ],
+      "title": "Thesis Tag",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scout",
+    "thesis_tag",
+    "thesis"
+  ],
+  "title": "Candidate",
+  "type": "object"
+}

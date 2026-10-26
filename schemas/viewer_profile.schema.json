@@ -1,0 +1,55 @@
+{
+  "properties": {
+    "followed_player_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Followed Player Id"
+    },
+    "followed_team_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Followed Team Id"
+    },
+    "lang": {
+      "enum": [
+        "en",
+        "es"
+      ],
+      "title": "Lang",
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "analyst",
+        "fan"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "profile_id": {
+      "title": "Profile Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "profile_id",
+    "mode",
+    "lang"
+  ],
+  "title": "ViewerProfile",
+  "type": "object"
+}

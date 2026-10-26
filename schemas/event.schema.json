@@ -1,0 +1,205 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "end_x": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "End X"
+    },
+    "end_y": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "End Y"
+    },
+    "event_id": {
+      "title": "Event Id",
+      "type": "string"
+    },
+    "match_clock_ms": {
+      "title": "Match Clock Ms",
+      "type": "integer"
+    },
+    "match_id": {
+      "title": "Match Id",
+      "type": "string"
+    },
+    "outcome": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Outcome"
+    },
+    "period": {
+      "title": "Period",
+      "type": "integer"
+    },
+    "player_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Player Id"
+    },
+    "possession_id": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Possession Id"
+    },
+    "qualifiers": {
+      "additionalProperties": true,
+      "title": "Qualifiers",
+      "type": "object"
+    },
+    "related_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Related Ids",
+      "type": "array"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "seq": {
+      "title": "Seq",
+      "type": "integer"
+    },
+    "team_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Team Id"
+    },
+    "type": {
+      "enum": [
+        "match_metadata",
+        "lineup",
+        "kickoff",
+        "period_start",
+        "period_end",
+        "match_end",
+        "stoppage_added",
+        "pass",
+        "carry",
+        "dribble",
+        "cross",
+        "shot",
+        "goal",
+        "own_goal",
+        "tackle",
+        "interception",
+        "block",
+        "clearance",
+        "save",
+        "claim",
+        "pressure",
+        "possession_change",
+        "throw_in",
+        "corner",
+        "free_kick",
+        "goal_kick",
+        "penalty",
+        "foul",
+        "card",
+        "offside",
+        "substitution",
+        "injury_stoppage",
+        "tactical_shift",
+        "event_correction"
+      ],
+      "title": "Type",
+      "type": "string"
+    },
+    "under_pressure": {
+      "default": false,
+      "title": "Under Pressure",
+      "type": "boolean"
+    },
+    "wall_ts": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Wall Ts"
+    },
+    "x": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "X"
+    },
+    "y": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Y"
+    }
+  },
+  "required": [
+    "event_id",
+    "match_id",
+    "seq",
+    "type",
+    "period",
+    "match_clock_ms"
+  ],
+  "title": "Event",
+  "type": "object"
+}

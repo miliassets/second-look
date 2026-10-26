@@ -1,0 +1,413 @@
+{
+  "$defs": {
+    "ChainLayer": {
+      "properties": {
+        "event_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Event Ids",
+          "type": "array"
+        },
+        "points": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Points",
+          "type": "array"
+        },
+        "type": {
+          "const": "chain",
+          "default": "chain",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "points"
+      ],
+      "title": "ChainLayer",
+      "type": "object"
+    },
+    "ClaimRef": {
+      "properties": {
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "required": [
+        "claim_id",
+        "type"
+      ],
+      "title": "ClaimRef",
+      "type": "object"
+    },
+    "HaloLayer": {
+      "properties": {
+        "player_id": {
+          "title": "Player Id",
+          "type": "string"
+        },
+        "type": {
+          "const": "player_halo",
+          "default": "player_halo",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "player_id"
+      ],
+      "title": "HaloLayer",
+      "type": "object"
+    },
+    "MarkerLayer": {
+      "properties": {
+        "at": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "At",
+          "type": "array"
+        },
+        "event_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event Id"
+        },
+        "label": {
+          "default": "",
+          "title": "Label",
+          "type": "string"
+        },
+        "type": {
+          "const": "marker",
+          "default": "marker",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "at"
+      ],
+      "title": "MarkerLayer",
+      "type": "object"
+    },
+    "Source": {
+      "properties": {
+        "kind": {
+          "default": "live",
+          "enum": [
+            "live",
+            "recorded"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "latency_ms": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latency Ms"
+        },
+        "trace_id": {
+          "default": "",
+          "title": "Trace Id",
+          "type": "string"
+        }
+      },
+      "title": "Source",
+      "type": "object"
+    },
+    "Span": {
+      "properties": {
+        "end": {
+          "title": "End",
+          "type": "integer"
+        },
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        },
+        "start": {
+          "title": "Start",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "ref"
+      ],
+      "title": "Span",
+      "type": "object"
+    },
+    "ZoneLayer": {
+      "properties": {
+        "label_key": {
+          "default": "",
+          "title": "Label Key",
+          "type": "string"
+        },
+        "rect": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Rect",
+          "type": "array"
+        },
+        "type": {
+          "const": "zone",
+          "default": "zone",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rect"
+      ],
+      "title": "ZoneLayer",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "badges": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Badges",
+      "type": "array"
+    },
+    "claims": {
+      "items": {
+        "$ref": "#/$defs/ClaimRef"
+      },
+      "title": "Claims",
+      "type": "array"
+    },
+    "duration_ms": {
+      "title": "Duration Ms",
+      "type": "integer"
+    },
+    "evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "headline": {
+      "default": "",
+      "title": "Headline",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "factual",
+        "explanation",
+        "correction_notice",
+        "recap",
+        "player_tag",
+        "score",
+        "answer"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "lang": {
+      "enum": [
+        "en",
+        "es"
+      ],
+      "title": "Lang",
+      "type": "string"
+    },
+    "layers": {
+      "items": {
+        "discriminator": {
+          "mapping": {
+            "chain": "#/$defs/ChainLayer",
+            "marker": "#/$defs/MarkerLayer",
+            "player_halo": "#/$defs/HaloLayer",
+            "zone": "#/$defs/ZoneLayer"
+          },
+          "propertyName": "type"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/ChainLayer"
+          },
+          {
+            "$ref": "#/$defs/MarkerLayer"
+          },
+          {
+            "$ref": "#/$defs/ZoneLayer"
+          },
+          {
+            "$ref": "#/$defs/HaloLayer"
+          }
+        ]
+      },
+      "title": "Layers",
+      "type": "array"
+    },
+    "overlay_id": {
+      "title": "Overlay Id",
+      "type": "string"
+    },
+    "priority": {
+      "default": 1,
+      "title": "Priority",
+      "type": "integer"
+    },
+    "profile_id": {
+      "title": "Profile Id",
+      "type": "string"
+    },
+    "revision": {
+      "default": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "show_at_match_ms": {
+      "title": "Show At Match Ms",
+      "type": "integer"
+    },
+    "slot": {
+      "default": "lower_third",
+      "enum": [
+        "lower_third",
+        "top_right",
+        "side_panel"
+      ],
+      "title": "Slot",
+      "type": "string"
+    },
+    "source": {
+      "$ref": "#/$defs/Source"
+    },
+    "spans": {
+      "items": {
+        "$ref": "#/$defs/Span"
+      },
+      "title": "Spans",
+      "type": "array"
+    },
+    "story_id": {
+      "title": "Story Id",
+      "type": "string"
+    },
+    "supersedes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Supersedes"
+    },
+    "text": {
+      "default": "",
+      "title": "Text",
+      "type": "string"
+    },
+    "viewer_mode": {
+      "enum": [
+        "analyst",
+        "fan"
+      ],
+      "title": "Viewer Mode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "overlay_id",
+    "story_id",
+    "kind",
+    "viewer_mode",
+    "profile_id",
+    "lang",
+    "show_at_match_ms",
+    "duration_ms"
+  ],
+  "title": "Overlay",
+  "type": "object"
+}
