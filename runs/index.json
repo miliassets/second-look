@@ -1,5 +1,5 @@
 {
-  "default": "20261014T125233Z-demo-20261024",
+  "default": "20261027T040325Z-demo-20261024",
   "runs": [
     {
       "run_id": "20261014T125233Z-demo-20261024",
@@ -12,6 +12,25 @@
       "model": "fake",
       "models_served": null,
       "calls": null
+    },
+    {
+      "run_id": "20261027T040325Z-demo-20261024",
+      "recorded_at": "20261027T040325Z",
+      "provider": "gemini",
+      "label": "recorded agent run",
+      "live_inference": true,
+      "note": "Real model calls (gemini); failed or timed-out calls fell back to factual cards",
+      "correction_at": "81:40",
+      "model": "gemini-3.5-flash",
+      "models_served": [
+        "gemini-3.6-flash"
+      ],
+      "calls": {
+        "total": 175,
+        "ok": 171,
+        "cached": 0,
+        "failed": 4
+      }
     }
   ]
 }

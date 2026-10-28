@@ -1,0 +1,26 @@
+{
+  "run_id": "20261027T040325Z-demo-20261024",
+  "label": "recorded agent run",
+  "recorded_at": "20261027T040325Z",
+  "git_sha": "019700f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash",
+  "seed": 20261024,
+  "scope": "full",
+  "scenario": "demo",
+  "faults": "demo",
+  "live_inference": true,
+  "models_served": [
+    "gemini-3.6-flash"
+  ],
+  "calls": {
+    "total": 175,
+    "ok": 171,
+    "cached": 0,
+    "failed": 4
+  },
+  "start_ms": 0,
+  "end_ms": 5763649,
+  "note": "Real model calls (gemini); failed or timed-out calls fell back to factual cards",
+  "correction_at": "81:40"
+}
