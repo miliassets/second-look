@@ -128,3 +128,102 @@ def test_factory_defaults_to_fake_and_requires_keys(monkeypatch, tmp_path):
     monkeypatch.setenv("GITHUB_TOKEN", "x")
     g = make_llm("github", root=tmp_path)
     assert g.live and g.cache_dir == tmp_path / ".cache" / "llm" and g.budget.run_cap == 60
+
+
+# ---- Gemini native client (mock transport, no network)
+def _gem(handler, **kw):
+    from secondlook.agents.llm import GeminiNativeClient
+    return GeminiNativeClient(transport=httpx.MockTransport(handler), backoff_s=0, **kw)
+
+
+def _gem_req(**kw):
+    base = dict(agent="s", instructions="sys", messages=[{"role": "user", "content": "u"}])
+    return LLMRequest(**{**base, **kw})
+
+
+async def test_gemini_maps_request_and_tool_call():
+    seen = {}
+
+    def handler(request: httpx.Request):
+        seen["url"], seen["headers"], seen["body"] = str(request.url), request.headers, json.loads(request.content)
+        return httpx.Response(200, json={"modelVersion": "gemini-3.5-flash", "usageMetadata": {
+            "promptTokenCount": 9, "candidatesTokenCount": 2, "thoughtsTokenCount": 3},
+            "candidates": [{"content": {"parts": [{"functionCall": {"name": "get_dossier",
+                            "args": {"a": 1}}, "thoughtSignature": "SIG"}]}}]})
+    req = _gem_req(tools=[ToolSpec(name="get_dossier", description="d", parameters={
+        "type": "object", "title": "X", "additionalProperties": False,
+        "properties": {"a": {"type": "integer", "default": 0}}})])
+    out = await _gem(handler).complete(req.model_copy(update={"model": "gemini-3.5-flash"}))
+    assert seen["url"].endswith("/models/gemini-3.5-flash:generateContent")
+    assert not {"authorization", "x-goog-api-key"} & set(seen["headers"].keys())
+    b = seen["body"]
+    assert b["systemInstruction"]["parts"][0]["text"] == "sys"
+    assert b["contents"] == [{"role": "user", "parts": [{"text": "u"}]}]
+    decl = b["tools"][0]["functionDeclarations"][0]
+    assert decl["name"] == "get_dossier"
+    assert decl["parameters"] == {"type": "object", "properties": {"a": {"type": "integer"}}}
+    assert out.tool_calls[0].name == "get_dossier" and out.tool_calls[0].arguments == {"a": 1}
+    assert out.tool_calls[0].id == "gem-0.SIG" and out.tokens_in == 9 and out.tokens_out == 5
+
+
+async def test_gemini_tool_round_trip_and_schema():
+    seen = {}
+
+    def handler(request: httpx.Request):
+        seen["body"] = json.loads(request.content)
+        return httpx.Response(200, json={"candidates": [{"content": {"parts": [
+            {"text": "x", "thought": True}, {"text": "{\"ok\": true}"}]}}]})
+    msgs = [{"role": "user", "content": "u"},
+            {"role": "assistant", "content": "", "tool_calls": [
+                {"id": "gem-0.SIG", "type": "function", "function": {"name": "f", "arguments": "{\"x\": 1}"}},
+                {"id": "gem-1", "type": "function", "function": {"name": "g", "arguments": "{}"}}]},
+            {"role": "tool", "tool_call_id": "gem-0.SIG", "content": "{\"v\": 2}"},
+            {"role": "tool", "tool_call_id": "gem-1", "content": "[1, 2]"}]
+    out = await _gem(handler).complete(_gem_req(messages=msgs, response_schema={"type": "object"}))
+    c = seen["body"]["contents"]
+    assert [x["role"] for x in c] == ["user", "model", "user"]
+    assert c[1]["parts"][0] == {"functionCall": {"name": "f", "args": {"x": 1}}, "thoughtSignature": "SIG"}
+    assert c[2]["parts"][0]["functionResponse"] == {"name": "f", "response": {"v": 2}}
+    assert c[2]["parts"][1]["functionResponse"] == {"name": "g", "response": {"result": [1, 2]}}
+    g = seen["body"]["generationConfig"]
+    assert g["responseMimeType"] == "application/json" and g["responseJsonSchema"] == {"type": "object"}
+    assert out.text == "{\"ok\": true}"  # thought parts dropped
+
+
+async def test_gemini_retries_then_falls_back_and_schema_fallback():
+    urls = []
+
+    def handler(request: httpx.Request):
+        urls.append(request.url.path.rsplit("/", 1)[1])
+        if "3.5" in urls[-1]:
+            return httpx.Response(503, json={"error": {"status": "UNAVAILABLE"}})
+        return httpx.Response(200, json={"candidates": [{"content": {"parts": [{"text": "hi"}]}}]})
+    out = await _gem(handler).complete(_gem_req())
+    assert urls == ["gemini-3.5-flash:generateContent"] * 3 + ["gemini-flash-latest:generateContent"]
+    assert out.text == "hi"
+
+    urls.clear()
+
+    def h429(request: httpx.Request):
+        urls.append(request.url.path.rsplit("/", 1)[1])
+        return httpx.Response(429, json={"error": {"status": "RESOURCE_EXHAUSTED"}})
+    with pytest.raises(httpx.HTTPStatusError):
+        await _gem(h429).complete(_gem_req())
+    assert urls == ["gemini-3.5-flash:generateContent", "gemini-flash-latest:generateContent"]
+
+    bodies = []
+
+    def h2(request: httpx.Request):
+        bodies.append(json.loads(request.content))
+        if "responseJsonSchema" in bodies[-1]["generationConfig"]:
+            return httpx.Response(400, json={"error": {"message": "bad schema"}})
+        return httpx.Response(200, json={"candidates": [{"content": {"parts": [{"text": "{}"}]}}]})
+    c = _gem(h2)
+    out = await c.complete(_gem_req(response_schema={"type": "object", "properties": {"a": {}}}))
+    assert c.schema_fallbacks == 1 and "JSON Schema" in bodies[-1]["systemInstruction"]["parts"][0]["text"]
+
+
+def test_factory_gemini_needs_no_key(monkeypatch, tmp_path):
+    monkeypatch.delenv("GEMINI_MODEL", raising=False)
+    g = make_llm("gemini", root=tmp_path)
+    assert g.live and g.model == "gemini-3.5-flash" and g.client.name == "gemini"

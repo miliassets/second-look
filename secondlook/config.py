@@ -29,13 +29,14 @@ SHOT_SPEED_MOMENT_KMH = 100.0
 # Text limits
 MAX_LEN = {"analyst": 220, "fan": 140}
 
-# Timeouts (seconds)
-TIMEOUT_SCOUT = 8
-TIMEOUT_EDITOR = 8
-TIMEOUT_PRODUCER = 6
-TIMEOUT_ASKWHY = 10
-TIMEOUT_SINGLE = 16  # the single agent does the scouts', Editor's and producers' work in one go
-MOMENT_BUDGET_S = 20
+# Timeouts (seconds). LLM_TIMEOUT_SCALE stretches them for slower live models (default 1).
+TIMEOUT_SCALE = float(os.environ.get("LLM_TIMEOUT_SCALE", "1"))
+TIMEOUT_SCOUT = 8 * TIMEOUT_SCALE
+TIMEOUT_EDITOR = 8 * TIMEOUT_SCALE
+TIMEOUT_PRODUCER = 6 * TIMEOUT_SCALE
+TIMEOUT_ASKWHY = 10 * TIMEOUT_SCALE
+TIMEOUT_SINGLE = 16 * TIMEOUT_SCALE  # the single agent does the scouts', Editor's and producers' work in one go
+MOMENT_BUDGET_S = 20 * TIMEOUT_SCALE
 
 
 @dataclass(frozen=True)

@@ -29,7 +29,9 @@ async function replayMode() {
   const info = idx.runs.find((r) => r.run_id === runId) || {};
   const man = await (await fetch(`runs/${runId}/manifest.json`)).json();
   document.body.dataset.mode = "replay";
-  state.textContent = `Recorded agent run · ${man.recorded_at.slice(0, 8)} · ${man.live_inference ? "" : "not live inference"}`;
+  state.textContent = man.live_inference
+    ? `Recorded agent run · ${man.recorded_at.slice(0, 8)} · ${man.provider} · ${(man.models_served || [man.model]).join(", ")} · real model calls`
+    : `Recorded agent run · ${man.recorded_at.slice(0, 8)} · not live inference`;
   $("replayBar").hidden = false;
   $("recordedNote").textContent = info.correction_at ? `Recorded: correction at ${info.correction_at}` : "Recorded run";
   correct.hidden = true; start.hidden = true;

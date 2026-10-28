@@ -45,8 +45,9 @@ def export_replay(run_dir: Path, web_runs: Path) -> Path:
     runs = []
     for p in sorted(web_runs.glob("*/manifest.json")):
         m = json.loads(p.read_text())
-        runs.append({k: m[k] for k in ("run_id", "recorded_at", "provider", "label",
-                                       "live_inference", "note", "correction_at")})
+        runs.append({k: m.get(k) for k in ("run_id", "recorded_at", "provider", "label",
+                                       "live_inference", "note", "correction_at", "model",
+                                       "models_served", "calls")})
     (web_runs / "index.json").write_text(json.dumps({"default": run_id, "runs": runs}, indent=2)
                                          + "\n")
     return out

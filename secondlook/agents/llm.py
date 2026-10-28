@@ -1,7 +1,9 @@
 """Chat-client factory, budget meter, response cache and call logging (design §6).
 
-Providers: `fake` (default, offline) | `github` (GitHub Models, OpenAI-compatible) | `foundry`.
-Nothing here calls a model unless the provider is github/foundry and a key is configured.
+Providers: `fake` (default, offline) | `github` (GitHub Models, OpenAI-compatible) | `foundry` |
+`gemini` (Google's native generateContent API; needs no key in this code: a network proxy or
+the caller's environment supplies credentials).
+Nothing here calls a model unless the provider is github/foundry/gemini.
 """
 from __future__ import annotations
 
@@ -114,7 +116,21 @@ class ScriptedClient:
 ENDPOINTS = {
     "github": "https://models.github.ai/inference",  # UNVERIFIED (docs unreachable at build time)
 }
-KEY_ENV = {"github": "GITHUB_TOKEN", "foundry": "FOUNDRY_KEY"}
+KEY_ENV = {"github": "GITHUB_TOKEN", "foundry": "FOUNDRY_KEY"}  # gemini: no key handled here
+GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+GEMINI_MODELS = ("gemini-3.5-flash", "gemini-flash-latest")  # preferred, fallback
+RETRY_STATUS = {500, 502, 503, 504}  # worth retrying on the same model
+FALLBACK_STATUS = RETRY_STATUS | {429}  # 429 = daily quota: no retry, try the other model
+_DROP_SCHEMA_KEYS = {"title", "default", "additionalProperties", "$schema"}
+
+
+def _clean_schema(node: Any) -> Any:
+    """Tool parameter schemas: drop keywords Gemini's function declarations reject."""
+    if isinstance(node, dict):
+        return {k: _clean_schema(v) for k, v in node.items() if k not in _DROP_SCHEMA_KEYS}
+    if isinstance(node, list):
+        return [_clean_schema(v) for v in node]
+    return node
 
 
 class OpenAICompatClient:
@@ -152,6 +168,130 @@ class OpenAICompatClient:
         return LLMResponse(text=msg.get("content") or "", tool_calls=calls,
                            tokens_in=u.get("prompt_tokens", 0),
                            tokens_out=u.get("completion_tokens", 0), model=d.get("model", ""))
+
+
+class GeminiNativeClient:
+    """Google's native `models/<model>:generateContent`. No key is read or sent by this code.
+
+    Mapping: instructions -> systemInstruction, messages -> contents, tools ->
+    functionDeclarations, functionCall -> ToolCall. Structured output uses
+    responseMimeType=application/json + responseJsonSchema; if the API rejects the schema (400)
+    the schema is put in the prompt instead. Gemini 3 thought signatures ride inside
+    ToolCall.id ("gem-<n>.<signature>") so they come back with the tool result.
+    """
+
+    def __init__(self, model: str = GEMINI_MODELS[0], fallback: str | None = GEMINI_MODELS[1],
+                 transport: httpx.AsyncBaseTransport | None = None, base: str = GEMINI_BASE,
+                 tries: int = 3, backoff_s: float = 1.0, timeout_s: float = 60.0,
+                 thinking: str = "low"):
+        self.name, self.model, self.fallback, self.base = "gemini", model, fallback, base.rstrip("/")
+        self.transport, self.tries, self.backoff_s, self.timeout_s = transport, tries, backoff_s, timeout_s
+        self.schema_fallbacks = 0
+        self.thinking = thinking  # thinkingLevel: minimal | low | medium | high ("" = model default)
+
+    @staticmethod
+    def _contents(messages: list[dict]) -> list[dict]:
+        names: dict[str, str] = {}
+        out: list[dict] = []
+
+        def add(role: str, part: dict) -> None:
+            if out and out[-1]["role"] == role and (role == "user" or "functionCall" in part):
+                out[-1]["parts"].append(part)
+            else:
+                out.append({"role": role, "parts": [part]})
+
+        for m in messages:
+            role = m.get("role")
+            if role == "assistant":
+                if m.get("content"):
+                    out.append({"role": "model", "parts": [{"text": m["content"]}]})
+                for c in m.get("tool_calls") or []:
+                    cid, fn = c["id"], c["function"]
+                    names[cid] = fn["name"]
+                    part: dict[str, Any] = {"functionCall": {
+                        "name": fn["name"], "args": json.loads(fn.get("arguments") or "{}")}}
+                    if "." in cid:
+                        part["thoughtSignature"] = cid.split(".", 1)[1]
+                    add("model", part)
+            elif role == "tool":
+                try:
+                    result = json.loads(m.get("content") or "null")
+                except ValueError:
+                    result = m.get("content")
+                if not isinstance(result, dict):
+                    result = {"result": result}
+                add("user", {"functionResponse": {
+                    "name": names.get(m.get("tool_call_id", ""), "tool"), "response": result}})
+            else:
+                add("user", {"text": m.get("content") or ""})
+        return out
+
+    def body(self, req: LLMRequest, schema_in_prompt: bool = False) -> dict:
+        instructions = req.instructions
+        gen: dict[str, Any] = {"temperature": 0, "maxOutputTokens": max(req.max_tokens * 4, 1024)}
+        if self.thinking:
+            gen["thinkingConfig"] = {"thinkingLevel": self.thinking}
+        if req.response_schema and not req.tools:
+            gen["responseMimeType"] = "application/json"
+            if schema_in_prompt:
+                instructions += ("\n\nReply with JSON only, matching this JSON Schema:\n"
+                                 + json.dumps(req.response_schema))
+            else:
+                gen["responseJsonSchema"] = req.response_schema
+        elif req.response_schema:
+            # tools and a JSON mime type do not mix on every model: ask for JSON in the prompt
+            instructions += ("\n\nWhen you are done calling tools, reply with JSON only, "
+                             "matching this JSON Schema:\n" + json.dumps(req.response_schema))
+        b: dict[str, Any] = {"systemInstruction": {"parts": [{"text": instructions}]},
+                             "contents": self._contents(req.messages), "generationConfig": gen}
+        if req.tools:
+            b["tools"] = [{"functionDeclarations": [
+                {"name": t.name, "description": t.description,
+                 **({"parameters": _clean_schema(t.parameters)}
+                    if t.parameters.get("properties") else {})} for t in req.tools]}]
+        return b
+
+    async def _post(self, c: httpx.AsyncClient, model: str, body: dict) -> httpx.Response:
+        r = None
+        for i in range(self.tries):
+            r = await c.post(f"{self.base}/{model}:generateContent", json=body)
+            if r.status_code not in RETRY_STATUS:
+                return r
+            if i + 1 < self.tries:
+                await asyncio.sleep(self.backoff_s * 2 ** i)
+        assert r is not None
+        return r
+
+    async def complete(self, req: LLMRequest) -> LLMResponse:
+        model = req.model if req.model.startswith("gemini") else self.model
+        async with httpx.AsyncClient(transport=self.transport, timeout=self.timeout_s) as c:
+            body = self.body(req)
+            r = await self._post(c, model, body)
+            if r.status_code == 400 and req.response_schema and not req.tools:
+                self.schema_fallbacks += 1
+                body = self.body(req, schema_in_prompt=True)
+                r = await self._post(c, model, body)
+            if r.status_code in FALLBACK_STATUS and self.fallback and self.fallback != model:
+                model = self.fallback
+                r = await self._post(c, model, body)
+            r.raise_for_status()
+            d = r.json()
+        cand = (d.get("candidates") or [{}])[0]
+        text, calls = "", []
+        for i, p in enumerate((cand.get("content") or {}).get("parts") or []):
+            if p.get("thought"):
+                continue
+            if "functionCall" in p:
+                fc = p["functionCall"]
+                sig = p.get("thoughtSignature")
+                calls.append(ToolCall(id=f"gem-{i}" + (f".{sig}" if sig else ""),
+                                      name=fc["name"], arguments=fc.get("args") or {}))
+            elif "text" in p:
+                text += p["text"]
+        u = d.get("usageMetadata", {})
+        return LLMResponse(text=text, tool_calls=calls, tokens_in=u.get("promptTokenCount", 0),
+                           tokens_out=u.get("candidatesTokenCount", 0) + u.get("thoughtsTokenCount", 0),
+                           model=d.get("modelVersion") or model)
 
 
 @dataclass
@@ -264,13 +404,16 @@ def make_llm(provider: str | None = None, store: Any = None, root: Path | None =
         client: ChatClient = FixtureClient(fixtures) if fixtures else ScriptedClient(responders)
         return ManagedLLM(client, store, None, None, "fake", live=False)
     key = os.environ.get(KEY_ENV.get(provider, ""), "")
-    if not key:
+    if provider != "gemini" and not key:
         raise RuntimeError(f"provider {provider!r} needs {KEY_ENV.get(provider)} in .env")
     if provider == "github":
         client = OpenAICompatClient("github", ENDPOINTS["github"], key, "openai/gpt-4.1-nano")
     elif provider == "foundry":
         client = OpenAICompatClient("foundry", os.environ["FOUNDRY_ENDPOINT"], key,
                                     os.environ.get("FOUNDRY_MODEL", "gpt-4.1-nano"))
+    elif provider == "gemini":
+        client = GeminiNativeClient(os.environ.get("GEMINI_MODEL", GEMINI_MODELS[0]),
+                                    thinking=os.environ.get("GEMINI_THINKING", "low"))
     else:
         raise ValueError(provider)
     budget = Budget(cfg.run_cap, cfg.daily_cap, root / ".state" / "llm_budget.json")

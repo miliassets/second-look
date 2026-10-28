@@ -1,0 +1,452 @@
+{
+  "meta": {
+    "date": "2026-10-27",
+    "git_sha": "15b1b14",
+    "provider": "gemini",
+    "model": "gemini",
+    "n_sequences": 5,
+    "partial": true
+  },
+  "summary": {
+    "multi": {
+      "unsupported_claims_per_100": {
+        "value": 5.357142857142857,
+        "ci95": [
+          0.0,
+          11.764705882352942
+        ]
+      },
+      "published_accuracy_pct": {
+        "value": 20.0,
+        "ci95": [
+          0.0,
+          60.0
+        ]
+      },
+      "fallback_rate_pct": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "corrections_both_5s_pct": {
+        "value": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ]
+      },
+      "p95_latency_ms": {
+        "value": 2715,
+        "ci95": [
+          2212,
+          2715
+        ]
+      },
+      "survival_under_fault_pct": {
+        "value": null,
+        "ci95": null
+      },
+      "tokens_per_completed_moment": {
+        "value": 63430.4,
+        "ci95": [
+          55692.2,
+          72680.0
+        ]
+      },
+      "n": {
+        "value": 5.0,
+        "ci95": null
+      },
+      "published": {
+        "value": 5.0,
+        "ci95": null
+      }
+    },
+    "single": {
+      "unsupported_claims_per_100": {
+        "value": 5.0,
+        "ci95": [
+          0.0,
+          12.5
+        ]
+      },
+      "published_accuracy_pct": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "fallback_rate_pct": {
+        "value": 60.0,
+        "ci95": [
+          20.0,
+          100.0
+        ]
+      },
+      "corrections_both_5s_pct": {
+        "value": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ]
+      },
+      "p95_latency_ms": {
+        "value": 12429,
+        "ci95": [
+          9194,
+          12429
+        ]
+      },
+      "survival_under_fault_pct": {
+        "value": null,
+        "ci95": null
+      },
+      "tokens_per_completed_moment": {
+        "value": 71723.0,
+        "ci95": [
+          25821.25,
+          175413.0
+        ]
+      },
+      "n": {
+        "value": 5.0,
+        "ci95": null
+      },
+      "published": {
+        "value": 2.0,
+        "ci95": null
+      }
+    },
+    "no_editor": {
+      "unsupported_claims_per_100": {
+        "value": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "published_accuracy_pct": {
+        "value": 40.0,
+        "ci95": [
+          0.0,
+          80.0
+        ]
+      },
+      "fallback_rate_pct": {
+        "value": 20.0,
+        "ci95": [
+          0.0,
+          60.0
+        ]
+      },
+      "corrections_both_5s_pct": {
+        "value": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ]
+      },
+      "p95_latency_ms": {
+        "value": 10510,
+        "ci95": [
+          9468,
+          10510
+        ]
+      },
+      "survival_under_fault_pct": {
+        "value": null,
+        "ci95": null
+      },
+      "tokens_per_completed_moment": {
+        "value": 70561.25,
+        "ci95": [
+          50506.2,
+          134208.0
+        ]
+      },
+      "n": {
+        "value": 5.0,
+        "ci95": null
+      },
+      "published": {
+        "value": 4.0,
+        "ci95": null
+      }
+    }
+  },
+  "rows": [
+    {
+      "system": "multi",
+      "seq_id": "s01-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 13,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 2715,
+      "tokens": 78803,
+      "calls": 12,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s01-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": null,
+      "proposed_claims": 6,
+      "failed_claims": 1,
+      "explained_profiles": [],
+      "latency_ms": null,
+      "tokens": 41985,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s01-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 14,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 10261,
+      "tokens": 72063,
+      "calls": 10,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s07-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 13,
+      "failed_claims": 2,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 2212,
+      "tokens": 53573,
+      "calls": 13,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s07-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 4,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "fan-es"
+      ],
+      "latency_ms": 12429,
+      "tokens": 22572,
+      "calls": 4,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s07-clean",
+      "group": "clean",
+      "true_tag": "pressing_recovery",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 12,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 8096,
+      "tokens": 42772,
+      "calls": 9,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s13-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "individual_action",
+      "proposed_claims": 3,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "fan-es"
+      ],
+      "latency_ms": 2111,
+      "tokens": 57785,
+      "calls": 14,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s13-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "sustained_possession",
+      "proposed_claims": 5,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en"
+      ],
+      "latency_ms": 9194,
+      "tokens": 17094,
+      "calls": 3,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s13-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": null,
+      "proposed_claims": 2,
+      "failed_claims": 0,
+      "explained_profiles": [],
+      "latency_ms": null,
+      "tokens": 50503,
+      "calls": 8,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s19-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 11,
+      "failed_claims": 1,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 2422,
+      "tokens": 56765,
+      "calls": 12,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s19-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": null,
+      "proposed_claims": 2,
+      "failed_claims": 0,
+      "explained_profiles": [],
+      "latency_ms": null,
+      "tokens": 26886,
+      "calls": 6,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s19-misleading",
+      "group": "misleading",
+      "true_tag": "direct_play_chaos",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 11,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 9468,
+      "tokens": 52152,
+      "calls": 10,
+      "correction_both_5s": null,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "multi",
+      "seq_id": "s25-correction",
+      "group": "correction",
+      "true_tag": "sustained_possession",
+      "published_tag": "individual_action",
+      "proposed_claims": 16,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 2088,
+      "tokens": 70226,
+      "calls": 14,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "single",
+      "seq_id": "s25-correction",
+      "group": "correction",
+      "true_tag": "sustained_possession",
+      "published_tag": null,
+      "proposed_claims": 3,
+      "failed_claims": 0,
+      "explained_profiles": [],
+      "latency_ms": null,
+      "tokens": 34909,
+      "calls": 6,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    },
+    {
+      "system": "no_editor",
+      "seq_id": "s25-correction",
+      "group": "correction",
+      "true_tag": "sustained_possession",
+      "published_tag": "pressing_recovery",
+      "proposed_claims": 15,
+      "failed_claims": 0,
+      "explained_profiles": [
+        "analyst-en",
+        "fan-es"
+      ],
+      "latency_ms": 10510,
+      "tokens": 64755,
+      "calls": 12,
+      "correction_both_5s": true,
+      "survived_fault": null,
+      "fault_profile": null
+    }
+  ]
+}

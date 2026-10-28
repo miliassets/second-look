@@ -65,15 +65,23 @@ async def record_run(cfg: RunConfig, out_root: Path, provider_label: str | None 
     d.mkdir(parents=True, exist_ok=True)
     md = runner.match.metadata
     provider = provider_label or cfg.llm
+    calls = runner.store.calls()
+    ok = [c for c in calls if c["outcome"] == "ok"]
+    live = provider in ("github", "foundry", "gemini")
     (d / "manifest.json").write_text(json.dumps({
         "run_id": run_id, "label": "recorded agent run", "recorded_at": stamp,
         "git_sha": git_sha(), "provider": provider, "model": runner.services.llm.model
         if runner.services else "none", "seed": cfg.seed, "scope": cfg.scope,
         "scenario": cfg.scenario, "faults": cfg.faults,
-        "live_inference": provider in ("github", "foundry"),
+        "live_inference": live,
+        "models_served": sorted({c["model"] for c in ok if c["model"]}) if live else [],
+        "calls": {"total": len(calls), "ok": len(ok), "cached": sum(1 for c in ok if c["cached"]),
+                  "failed": len(calls) - len(ok)},
         "start_ms": runner.meta_payload()["start_ms"], "end_ms": runner.now_ms,
         "note": ("Rule-based fake model (not recorded model output)"
-                 if provider == "fake" else "Recorded model output"),
+                 if provider == "fake" else
+                 "Real model calls (%s); failed or timed-out calls fell back to factual cards"
+                 % provider),
         "correction_at": next((m.payload["clock"] for m in msgs if m.type == "event"
                                and m.payload["type"] == "event_correction"), None),
     }, indent=2) + "\n")
@@ -108,7 +116,6 @@ async def record_run(cfg: RunConfig, out_root: Path, provider_label: str | None 
                 "story", moment_id=mo.moment_id)],
             "story_id": sid})
     (d / "workflow.jsonl").write_text("".join(dumps(w) + "\n" for w in wf))
-    calls = runner.store.calls()
     (d / "calls.jsonl").write_text("".join(dumps(c) + "\n" for c in calls))
     (d / "askwhy.jsonl").write_text("".join(dumps(a) + "\n" for a in answers))
     lat = [m.payload["source"]["latency_ms"] for m in ov

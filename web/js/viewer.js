@@ -80,11 +80,14 @@ function detailFromRun(storyId) {
     calls: recorded.calls.filter((c) => c.moment_id === w.moment.moment_id),
   };
 }
+const bannerText = (m, t) => m.live_inference
+  ? `${t.recorded} · ${m.recorded_at.slice(0, 8)} · ${m.provider} · ${(m.models_served || [m.model]).join(", ")} · ${t.real_calls}`
+  : `${t.recorded} · ${m.recorded_at.slice(0, 8)} · ${t.not_live}`;
 async function startReplay(handlers) {
   const run = await loadReplay(runId); recorded = run;
   const m = run.manifest;
   $("banner").hidden = false;
-  $("banner").textContent = `${t.recorded} · ${m.recorded_at.slice(0, 8)} · ${m.live_inference ? "" : t.not_live}`;
+  $("banner").textContent = bannerText(m, t);
   $("synthetic").textContent = `${t.synthetic} · ${t.recorded_short}`;
   setupRecordedAsk(run);
   source = connectReplay(profile, run, handlers);
